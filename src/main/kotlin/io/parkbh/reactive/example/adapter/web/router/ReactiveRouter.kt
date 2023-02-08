@@ -13,13 +13,15 @@ class ReactiveRouter(private val routerHandler: RouterHandler) {
     fun router() = coRouter {
         accept(MediaType.APPLICATION_JSON).nest {
             "/api/point".nest {
-                PUT("/earn")
-                PUT("/use")
+                // 적립
+                PUT("/earn", routerHandler::earnPoint)
+                // 사용
+                PUT("/use", routerHandler::userRegister)
             }
 
             "/api/users".nest {
-                POST("")
-                PUT("")
+                POST("", routerHandler::userRegister)
+                PUT("", routerHandler::userUpdate)
             }
         }
     }
