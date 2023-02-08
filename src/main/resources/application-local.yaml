@@ -1,0 +1,6 @@
+spring:
+  config:
+    location: classpath:application-local.yaml
+logging:
+  level:
+    org.springframework.data.r2dbc: DEBUG

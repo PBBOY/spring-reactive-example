@@ -1,0 +1,11 @@
+spring:
+  config:
+    activate:
+      on-profile: local
+
+  r2dbc:
+    url: r2dbc:postgresql://localhost:5432/db_point
+    username: db_point_user
+    password: dpu1
+  liquibase:
+    enabled: false
