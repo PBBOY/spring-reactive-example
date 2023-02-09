@@ -21,6 +21,8 @@ repositories {
 	mavenCentral()
 }
 
+extra["springCloudVersion"] = "2021.0.3"
+
 dependencies {
 	implementation("org.springdoc:springdoc-openapi-webflux-ui:1.6.11")
 	implementation("org.springdoc:springdoc-openapi-kotlin:1.6.11")
@@ -42,6 +44,12 @@ dependencies {
 	annotationProcessor("org.springframework.boot:spring-boot-configuration-processor")
 	testImplementation("org.springframework.boot:spring-boot-starter-test")
 	testImplementation("io.projectreactor:reactor-test")
+}
+
+dependencyManagement {
+	imports {
+		mavenBom("org.springframework.cloud:spring-cloud-dependencies:${property("springCloudVersion")}")
+	}
 }
 
 tasks.withType<KotlinCompile> {

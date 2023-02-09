@@ -16,7 +16,7 @@ class ReactiveRouter(private val routerHandler: RouterHandler) {
                 // 적립
                 PUT("/earn", routerHandler::earnPoint)
                 // 사용
-                PUT("/use", routerHandler::userRegister)
+                PUT("/use", routerHandler::usePoint)
             }
 
             "/api/users".nest {

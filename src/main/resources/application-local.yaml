@@ -1,6 +1,14 @@
 spring:
   config:
-    location: classpath:application-local.yaml
-logging:
-  level:
-    org.springframework.data.r2dbc: DEBUG
+    activate:
+      on-profile:
+        - local
+  r2dbc:
+    url: r2dbc:postgresql://localhost:5432/db_point
+    username: db_point_user
+    password: dpu1
+  liquibase:
+    url: jdbc:postgresql://localhost:5432/db_point
+    user: db_point_user
+    password: dpu1
+    enabled: true
