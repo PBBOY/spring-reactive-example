@@ -44,6 +44,8 @@ dependencies {
 	annotationProcessor("org.springframework.boot:spring-boot-configuration-processor")
 	testImplementation("org.springframework.boot:spring-boot-starter-test")
 	testImplementation("io.projectreactor:reactor-test")
+	testImplementation("io.kotest:kotest-runner-junit5-jvm:5.5.1")
+	testImplementation("io.kotest:kotest-assertions-core-jvm:5.5.1")
 }
 
 dependencyManagement {
@@ -61,4 +63,10 @@ tasks.withType<KotlinCompile> {
 
 tasks.withType<Test> {
 	useJUnitPlatform()
+}
+
+tasks.test {
+	doFirst {
+		systemProperty("spring.profiles.active", "test")
+	}
 }

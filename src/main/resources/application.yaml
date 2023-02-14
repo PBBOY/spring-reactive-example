@@ -3,5 +3,6 @@ spring:
     active: local
 logging:
   level:
-    org.springframework.data.r2dbc: DEBUG
+    io.r2dbc.postgresql.QUERY: DEBUG
+    io.r2dbc.postgresql.PARAM: DEBUG
 

@@ -2,12 +2,13 @@
 -- changeset author:parbh context:test,local
 
 create table public.tb_users (
-    id bigserial not null,
-    user_id varchar(30) not null UNIQUE,
-    address1 varchar(100) not null,
-    address2 varchar(100) null,
-    phone1 varchar(100) not null,
-    phone2 varchar(100) null,
+    id bigserial NOT NULL,
+    user_id varchar(30) NOT NULL UNIQUE,
+    address1 varchar(100) NOT NULL,
+    address2 varchar(100) NULL,
+    phone1 varchar(100) NOT NULL,
+    phone2 varchar(100) NULL,
+    password varchar(20) NOT NULL,
     created_at timestamp NOT NULL,
     updated_at timestamp NULL,
     constraint tb_users_pk primary key (id)
